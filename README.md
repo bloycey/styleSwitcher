@@ -28,6 +28,8 @@ The path to your custom stylesheets should be `css/customstyles/`
 
 The value of each option should correlate with one of the alternate stylesheets saved on your server. By default each of your custom stylesheets will *need* to start with the prefix `custom`. You can, however, change the prefix using the advanced options below.
 
+One of your options should have the value "defaultstyles". When this option is selected all custom stylesheets are removed.
+
 3. Add the styleSwitcher.js file to your footer after jQuery but before your custom.js file.
 
 4. Initialise the plugin by calling the styleSwitcher function on a `select` tag.
