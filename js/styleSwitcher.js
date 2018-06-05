@@ -5,11 +5,13 @@
         var settings = $.extend({
             path: "css/customstyles/",
             prefix: "custom",
+            inputType: "select",
             session: true
         }, options);
     
         var path = settings.path;
         var prefix = settings.prefix;
+        var inputType = settings.inputType;
         var session = settings.session;
     
         if(session == true) {
@@ -21,7 +23,7 @@
                 $(this).val(sessionStorage.getItem("customValue"));
             }
         }
-    
+
         $(this).change(function(){
 
             var linkUrl = "link[rel=stylesheet][href^='" + path + prefix + "']";
