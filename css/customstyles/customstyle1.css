@@ -1,4 +1,5 @@
-#helloworld {
-    color: red;
+html,
+body {
+  background-color: #2980b9;
 }
 
