@@ -1,8 +1,9 @@
-## Documentation 
+# Documentation 
 
 StyleSwitcher dynamically appends alternate stylesheets to the `head` of your site. This allows you to overwrite your main CSS file with new styles and preview them instantly.  StyleSwitcher can be applied to any `select` element and you can map as many alternate stylesheets as you want - the plugin will clean up as it goes and only load one alternate stylesheet at a time.
 
-### Quick Start
+
+## Quick Start
 
 1. Set up your alternate stylesheets using the following structure:
 
@@ -41,7 +42,7 @@ $(document).ready(function(){
 
 ---
 
-### Advanced Usage
+## Advanced Usage
 
 There are several options that you can specify. They defaults for these options are as follows:
 
