@@ -6,8 +6,8 @@ StyleSwitcher dynamically appends alternate stylesheets to the `head` of your si
 
 1. Set up your alternate stylesheets using the following structure:
 
-![]("img/css-structure-1.JPG")
-![]("img/css-structure-2.JPG")
+![]("https://bloycey.github.io/styleSwitcher/img/css-structure-1.JPG")
+![]("https://bloycey.github.io/styleSwitcher/img/css-structure-2.JPG")
 
 The path to your custom stylesheets should be `css/customstyles/`
 
