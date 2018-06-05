@@ -6,8 +6,11 @@ StyleSwitcher dynamically appends alternate stylesheets to the `head` of your si
 
 1. Set up your alternate stylesheets using the following structure:
 
-![]("https://bloycey.github.io/styleSwitcher/img/css-structure-1.JPG")
-![]("https://bloycey.github.io/styleSwitcher/img/css-structure-2.JPG")
+![](https://github.com/bloycey/styleSwitcher/blob/master/img/css-structure-1.JPG)
+
+And within the customstyles folder:
+
+![](https://github.com/bloycey/styleSwitcher/blob/master/img/css-structure-2.JPG)
 
 The path to your custom stylesheets should be `css/customstyles/`
 
@@ -52,7 +55,9 @@ $('#colorpick').styleSwitcher({
 ```
 
 `path` - Accepts a string. Determines the path to your custom css stylesheets.
+
 `prefix` - Accepts a string. determines the prefix for your custom css stylesheets.
+
 `session` - Accepts a boolean. Determines whether or not you selection is stored in session storage and will endure after page reloads. This is set to 'true' by default.
 
 ---
