@@ -20,9 +20,23 @@
             }
         
             if(sessionStorage.getItem("customValue") !== null){
-                $(this).val(sessionStorage.getItem("customValue"));
+                if(inputType == "select") {
+                    $(this).val(sessionStorage.getItem("customValue"));
+                }
+                if(inputType == "radio") {
+                    $(this).find("input").each(function(){
+                        $(this).attr("checked", false)
+                    })
+                
+                var selectedRadio = "input[value='" + sessionStorage.getItem("customValue") + "']"
+
+                $(selectedRadio).attr("checked", true);
+                
+                }
             }
         }
+
+        if(inputType == "select") {
 
         $(this).change(function(){
 
@@ -49,7 +63,36 @@
                     }
                 })
             }
-        })
+        })}
+
+        if(inputType == "radio") {
+            $(this).find("input").click(function(){
+                var linkUrl = "link[rel=stylesheet][href^='" + path + prefix + "']";
+            var styleSheet = $(this).val();
+
+            if (styleSheet == "defaultstyles") {
+                $(linkUrl).each(function(){
+                        $(this).remove();
+                })
+            } else {
+
+                var basicStyle = "<link rel='stylesheet' type='text/css' href='" + path + styleSheet + ".css'>"
+                $('head').append(basicStyle);
+        
+                if(session == true){
+                    sessionStorage.setItem("customStyle", basicStyle);
+                    sessionStorage.setItem("customValue", styleSheet);
+                }
+                $(linkUrl).each(function(){
+                    var stylesheetHref = path + styleSheet + ".css";
+                    if($(this).attr("href") !== stylesheetHref) {
+                        $(this).remove();
+                    }
+                })
+            }
+            })
+        }
+
         return this;
     }
 

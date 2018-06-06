@@ -109,4 +109,10 @@ body {
     display: inline-block;
     width: auto;
     height: 55px;
+    text-shadow: none;
+}
+
+#colorpick.radio-btns {
+  height: auto;
+  text-align: left;
 }
