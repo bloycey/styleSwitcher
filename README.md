@@ -52,6 +52,7 @@ There are several options that you can specify. They defaults for these options 
 $('#colorpick').styleSwitcher({
     path: "css/customstyles/",
     prefix: "custom",
+    inputType: "select",
     session: true
 })
     
@@ -60,6 +61,24 @@ $('#colorpick').styleSwitcher({
 `path` - Accepts a string. Determines the path to your custom css stylesheets.
 
 `prefix` - Accepts a string. determines the prefix for your custom css stylesheets.
+
+`inputType` - Accepts either `"select"` or `"radio"`. If using radio buttons you should structure your HTML as follows:
+
+```
+<form name="colorpick" id="colorpick" class="form-control radio-btns"> 
+    <input type="radio" id="default-theme"name="themecolors" class="colorpick" value="defaultstyles" checked> 
+    <label for="default-theme">Default Theme</label> 
+    <br> 
+    <input type="radio" id="blue-theme" name="themecolors" class="colorpick" value="customstyle1"> 
+    <label for="blue-theme">Blue Theme</label> 
+    <br> 
+    <input type="radio" id="green-theme" name="themecolors" class="colorpick" value="customstyle2"> 
+    <label for="green-theme">Green Theme</label> 
+    <br> 
+    <input type="radio" id="purple-theme" name="themecolors" class="colorpick" value="customstyle3"> 
+    <label for="purple-theme">Purple Theme</label> 
+</form>
+```
 
 `session` - Accepts a boolean. Determines whether or not you selection is stored in session storage and will endure after page reloads. This is set to 'true' by default.
 
