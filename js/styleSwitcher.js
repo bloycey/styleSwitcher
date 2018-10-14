@@ -1,7 +1,5 @@
 (function ( $ ) {
-
     $.fn.styleSwitcher = function(options) {
-
         var settings = $.extend({
             path: "css/customstyles/",
             prefix: "custom",
@@ -13,7 +11,7 @@
         var prefix = settings.prefix;
         var inputType = settings.inputType;
         var session = settings.session;
-    
+
         if(session == true) {
             if(sessionStorage.getItem("customStyle") !== null) {
                 $('head').append(sessionStorage.getItem("customStyle"));
@@ -24,28 +22,24 @@
                     $(this).val(sessionStorage.getItem("customValue"));
                 }
                 if(inputType == "radio") {
-                    $(this).find("input").each(function(){
-                        $(this).attr("checked", false)
-                    })
-                
                 var selectedRadio = "input[value='" + sessionStorage.getItem("customValue") + "']"
-
-                $(selectedRadio).attr("checked", true);
-                
+                $(selectedRadio).prop("checked", true);   
                 }
-            }
+            } 
+            
         }
 
         if(inputType == "select") {
 
         $(this).change(function(){
-
             var linkUrl = "link[rel=stylesheet][href^='" + path + prefix + "']";
             var styleSheet = $(this).val();
 
             if (styleSheet == "defaultstyles") {
+                sessionStorage.setItem("customStyle", null);
+                sessionStorage.setItem("customValue", null);
                 $(linkUrl).each(function(){
-                        $(this).remove();
+                    $(this).remove();
                 })
             } else {
 
@@ -68,11 +62,13 @@
         if(inputType == "radio") {
             $(this).find("input").click(function(){
                 var linkUrl = "link[rel=stylesheet][href^='" + path + prefix + "']";
-            var styleSheet = $(this).val();
+                var styleSheet = $(this).val();
 
             if (styleSheet == "defaultstyles") {
+                sessionStorage.setItem("customStyle", null);
+                sessionStorage.setItem("customValue", null);
                 $(linkUrl).each(function(){
-                        $(this).remove();
+                    $(this).remove();
                 })
             } else {
 
