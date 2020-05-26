@@ -81,7 +81,7 @@ If using radio buttons you should structure your HTML as follows:
 </form>
 ```
 
-If using buttons you should structure your HTML as follows:
+If using buttons you should structure your HTML as follows (note the use of the data attributes!):
 
 ```
 <div id="colorpick">
