@@ -1,3 +1,3 @@
 $(document).ready(function () {
-  $("#colorpick").styleSwitcher();
+    $("#colorpick").styleSwitcher();
 });
